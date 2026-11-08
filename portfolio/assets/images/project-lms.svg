@@ -1,0 +1,221 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1536 960" width="1536" height="960">
+  <defs>
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#F5EFE6" />
+      <stop offset="100%" stop-color="#EBE3D5" />
+    </linearGradient>
+    <linearGradient id="primaryGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#23533D" />
+      <stop offset="100%" stop-color="#1A4230" />
+    </linearGradient>
+    <linearGradient id="accentGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#B85437" />
+      <stop offset="100%" stop-color="#9E432A" />
+    </linearGradient>
+    <filter id="cardShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="8" stdDeviation="16" flood-color="#1B211E" flood-opacity="0.08" />
+    </filter>
+  </defs>
+
+  <!-- Canvas Background -->
+  <rect width="1536" height="960" fill="url(#bgGrad)" />
+
+  <!-- Subtle Grid Pattern -->
+  <g opacity="0.15" stroke="#527A64" stroke-width="1">
+    <line x1="0" y1="160" x2="1536" y2="160" />
+    <line x1="0" y1="320" x2="1536" y2="320" />
+    <line x1="0" y1="480" x2="1536" y2="480" />
+    <line x1="0" y1="640" x2="1536" y2="640" />
+    <line x1="0" y1="800" x2="1536" y2="800" />
+    <line x1="256" y1="0" x2="256" y2="960" />
+    <line x1="512" y1="0" x2="512" y2="960" />
+    <line x1="768" y1="0" x2="768" y2="960" />
+    <line x1="1024" y1="0" x2="1024" y2="960" />
+    <line x1="1280" y1="0" x2="1280" y2="960" />
+  </g>
+
+  <!-- Browser / App Frame -->
+  <g transform="translate(100, 70)" filter="url(#cardShadow)">
+    <!-- Window Outline -->
+    <rect width="1336" height="820" rx="16" fill="#FFFFFF" stroke="#E0D7C9" stroke-width="2" />
+
+    <!-- Window Header -->
+    <rect width="1336" height="64" rx="16" fill="#F8F4ED" />
+    <rect y="48" width="1336" height="16" fill="#F8F4ED" />
+    <line x1="0" y1="64" x2="1336" y2="64" stroke="#E5DED4" stroke-width="1.5" />
+
+    <!-- Window Dots -->
+    <circle cx="36" cy="32" r="7" fill="#E26D5C" />
+    <circle cx="60" cy="32" r="7" fill="#E8B04F" />
+    <circle cx="84" cy="32" r="7" fill="#60A561" />
+
+    <!-- Search / Address Bar Mockup -->
+    <rect x="240" y="16" width="856" height="32" rx="8" fill="#FFFFFF" stroke="#E5DED4" stroke-width="1" />
+    <circle cx="260" cy="32" r="5" fill="#527A64" opacity="0.6" />
+    <text x="280" y="38" font-family="'IBM Plex Sans', sans-serif" font-size="14" fill="#59655E">https://lms-portal.edu/dashboard</text>
+
+    <!-- Sidebar Navigation -->
+    <rect x="0" y="64" width="260" height="756" fill="#FAF7F2" />
+    <line x1="260" y1="64" x2="260" y2="820" stroke="#E5DED4" stroke-width="1" />
+
+    <!-- Brand / Portal Title -->
+    <rect x="28" y="96" width="36" height="36" rx="8" fill="url(#primaryGrad)" />
+    <text x="38" y="120" font-family="'Sora', sans-serif" font-size="18" font-weight="700" fill="#FFFFFF">L</text>
+    <text x="76" y="114" font-family="'Sora', sans-serif" font-size="16" font-weight="700" fill="#1B211E">LMS Portal</text>
+    <text x="76" y="128" font-family="'IBM Plex Sans', sans-serif" font-size="11" fill="#59655E">Student &amp; Admin Hub</text>
+
+    <!-- Nav Items -->
+    <!-- Active Item: Dashboard -->
+    <rect x="18" y="156" width="224" height="42" rx="8" fill="#23533D" opacity="0.1" />
+    <rect x="18" y="156" width="4" height="42" rx="2" fill="#23533D" />
+    <text x="56" y="182" font-family="'IBM Plex Sans', sans-serif" font-size="14" font-weight="600" fill="#23533D">Dashboard</text>
+
+    <!-- Other Nav Items -->
+    <text x="56" y="228" font-family="'IBM Plex Sans', sans-serif" font-size="14" fill="#343D37">My Courses (6)</text>
+    <text x="56" y="272" font-family="'IBM Plex Sans', sans-serif" font-size="14" fill="#343D37">Assignments &amp; Quizzes</text>
+    <text x="56" y="316" font-family="'IBM Plex Sans', sans-serif" font-size="14" fill="#343D37">Attendance Ledger</text>
+    <text x="56" y="360" font-family="'IBM Plex Sans', sans-serif" font-size="14" fill="#343D37">Fee &amp; Financials</text>
+    <text x="56" y="404" font-family="'IBM Plex Sans', sans-serif" font-size="14" fill="#343D37">Lecture Notes</text>
+    <text x="56" y="448" font-family="'IBM Plex Sans', sans-serif" font-size="14" fill="#343D37">Admin Settings</text>
+
+    <!-- User Profile Badge at bottom of sidebar -->
+    <rect x="18" y="738" width="224" height="56" rx="10" fill="#FFFFFF" stroke="#E5DED4" stroke-width="1" />
+    <circle cx="48" cy="766" r="16" fill="#527A64" />
+    <text x="44" y="771" font-family="'Sora', sans-serif" font-size="13" font-weight="700" fill="#FFFFFF">ZA</text>
+    <text x="74" y="760" font-family="'IBM Plex Sans', sans-serif" font-size="13" font-weight="600" fill="#1B211E">Student Account</text>
+    <text x="74" y="776" font-family="'IBM Plex Sans', sans-serif" font-size="11" fill="#59655E">BS Information Tech</text>
+
+    <!-- Main Content Area -->
+    <!-- Top Welcome Banner -->
+    <text x="296" y="112" font-family="'Sora', sans-serif" font-size="24" font-weight="700" fill="#1B211E">Welcome back, Zulqarnain!</text>
+    <text x="296" y="134" font-family="'IBM Plex Sans', sans-serif" font-size="14" fill="#59655E">Semester Overview · Academic Progress · Spring Session</text>
+
+    <!-- Stat Metric Cards -->
+    <!-- Card 1: Enrolled Courses -->
+    <g transform="translate(296, 160)">
+      <rect width="230" height="110" rx="12" fill="#FAF7F2" stroke="#E5DED4" stroke-width="1" />
+      <text x="20" y="36" font-family="'IBM Plex Sans', sans-serif" font-size="13" font-weight="600" fill="#59655E">Enrolled Courses</text>
+      <text x="20" y="76" font-family="'Sora', sans-serif" font-size="32" font-weight="700" fill="#23533D">06</text>
+      <text x="20" y="96" font-family="'IBM Plex Sans', sans-serif" font-size="11" fill="#527A64">All Active This Term</text>
+    </g>
+
+    <!-- Card 2: Attendance Rate -->
+    <g transform="translate(546, 160)">
+      <rect width="230" height="110" rx="12" fill="#FAF7F2" stroke="#E5DED4" stroke-width="1" />
+      <text x="20" y="36" font-family="'IBM Plex Sans', sans-serif" font-size="13" font-weight="600" fill="#59655E">Attendance Rate</text>
+      <text x="20" y="76" font-family="'Sora', sans-serif" font-size="32" font-weight="700" fill="#23533D">94.8%</text>
+      <text x="20" y="96" font-family="'IBM Plex Sans', sans-serif" font-size="11" fill="#527A64">+2.4% vs Previous Term</text>
+    </g>
+
+    <!-- Card 3: Pending Tasks -->
+    <g transform="translate(796, 160)">
+      <rect width="230" height="110" rx="12" fill="#FAF7F2" stroke="#E5DED4" stroke-width="1" />
+      <text x="20" y="36" font-family="'IBM Plex Sans', sans-serif" font-size="13" font-weight="600" fill="#59655E">Pending Tasks</text>
+      <text x="20" y="76" font-family="'Sora', sans-serif" font-size="32" font-weight="700" fill="#B85437">03</text>
+      <text x="20" y="96" font-family="'IBM Plex Sans', sans-serif" font-size="11" fill="#B85437">2 Due This Week</text>
+    </g>
+
+    <!-- Card 4: Fee Status -->
+    <g transform="translate(1046, 160)">
+      <rect width="230" height="110" rx="12" fill="#FAF7F2" stroke="#E5DED4" stroke-width="1" />
+      <text x="20" y="36" font-family="'IBM Plex Sans', sans-serif" font-size="13" font-weight="600" fill="#59655E">Fee Ledger</text>
+      <text x="20" y="76" font-family="'Sora', sans-serif" font-size="30" font-weight="700" fill="#23533D">Verified</text>
+      <text x="20" y="96" font-family="'IBM Plex Sans', sans-serif" font-size="11" fill="#527A64">Zero Dues Outstanding</text>
+    </g>
+
+    <!-- Section 1: Course Schedule / Modules Table -->
+    <g transform="translate(296, 300)">
+      <rect width="620" height="490" rx="12" fill="#FFFFFF" stroke="#E5DED4" stroke-width="1" />
+      <text x="24" y="36" font-family="'Sora', sans-serif" font-size="16" font-weight="700" fill="#1B211E">Current Course Modules &amp; Grades</text>
+
+      <!-- Table Header -->
+      <rect x="20" y="54" width="580" height="34" rx="6" fill="#F8F4ED" />
+      <text x="36" y="76" font-family="'IBM Plex Sans', sans-serif" font-size="12" font-weight="600" fill="#59655E">COURSE CODE &amp; TITLE</text>
+      <text x="360" y="76" font-family="'IBM Plex Sans', sans-serif" font-size="12" font-weight="600" fill="#59655E">CREDITS</text>
+      <text x="460" y="76" font-family="'IBM Plex Sans', sans-serif" font-size="12" font-weight="600" fill="#59655E">PROGRESS</text>
+      <text x="550" y="76" font-family="'IBM Plex Sans', sans-serif" font-size="12" font-weight="600" fill="#59655E">STATUS</text>
+
+      <!-- Row 1 -->
+      <line x1="20" y1="130" x2="600" y2="130" stroke="#F0EBE1" stroke-width="1" />
+      <text x="36" y="114" font-family="'IBM Plex Sans', sans-serif" font-size="13" font-weight="600" fill="#1B211E">IT-301: Web Engineering</text>
+      <text x="370" y="114" font-family="'IBM Plex Sans', sans-serif" font-size="13" fill="#59655E">3</text>
+      <rect x="440" y="104" width="80" height="8" rx="4" fill="#E5DED4" />
+      <rect x="440" y="104" width="72" height="8" rx="4" fill="#23533D" />
+      <text x="550" y="114" font-family="'IBM Plex Sans', sans-serif" font-size="12" font-weight="600" fill="#23533D">A (92%)</text>
+
+      <!-- Row 2 -->
+      <line x1="20" y1="174" x2="600" y2="174" stroke="#F0EBE1" stroke-width="1" />
+      <text x="36" y="158" font-family="'IBM Plex Sans', sans-serif" font-size="13" font-weight="600" fill="#1B211E">CS-304: Mobile Application Dev</text>
+      <text x="370" y="158" font-family="'IBM Plex Sans', sans-serif" font-size="13" fill="#59655E">3</text>
+      <rect x="440" y="148" width="80" height="8" rx="4" fill="#E5DED4" />
+      <rect x="440" y="148" width="68" height="8" rx="4" fill="#23533D" />
+      <text x="550" y="158" font-family="'IBM Plex Sans', sans-serif" font-size="12" font-weight="600" fill="#23533D">A (88%)</text>
+
+      <!-- Row 3 -->
+      <line x1="20" y1="218" x2="600" y2="218" stroke="#F0EBE1" stroke-width="1" />
+      <text x="36" y="202" font-family="'IBM Plex Sans', sans-serif" font-size="13" font-weight="600" fill="#1B211E">IT-308: Database Systems II</text>
+      <text x="370" y="202" font-family="'IBM Plex Sans', sans-serif" font-size="13" fill="#59655E">4</text>
+      <rect x="440" y="192" width="80" height="8" rx="4" fill="#E5DED4" />
+      <rect x="440" y="192" width="64" height="8" rx="4" fill="#23533D" />
+      <text x="550" y="202" font-family="'IBM Plex Sans', sans-serif" font-size="12" font-weight="600" fill="#23533D">A- (85%)</text>
+
+      <!-- Row 4 -->
+      <line x1="20" y1="262" x2="600" y2="262" stroke="#F0EBE1" stroke-width="1" />
+      <text x="36" y="246" font-family="'IBM Plex Sans', sans-serif" font-size="13" font-weight="600" fill="#1B211E">SE-310: Software Architecture</text>
+      <text x="370" y="246" font-family="'IBM Plex Sans', sans-serif" font-size="13" fill="#59655E">3</text>
+      <rect x="440" y="236" width="80" height="8" rx="4" fill="#E5DED4" />
+      <rect x="440" y="236" width="70" height="8" rx="4" fill="#23533D" />
+      <text x="550" y="246" font-family="'IBM Plex Sans', sans-serif" font-size="12" font-weight="600" fill="#23533D">A (90%)</text>
+
+      <!-- Row 5 -->
+      <line x1="20" y1="306" x2="600" y2="306" stroke="#F0EBE1" stroke-width="1" />
+      <text x="36" y="290" font-family="'IBM Plex Sans', sans-serif" font-size="13" font-weight="600" fill="#1B211E">IT-312: E-Commerce Architecture</text>
+      <text x="370" y="290" font-family="'IBM Plex Sans', sans-serif" font-size="13" fill="#59655E">3</text>
+      <rect x="440" y="280" width="80" height="8" rx="4" fill="#E5DED4" />
+      <rect x="440" y="280" width="76" height="8" rx="4" fill="#23533D" />
+      <text x="550" y="290" font-family="'IBM Plex Sans', sans-serif" font-size="12" font-weight="600" fill="#23533D">A+ (96%)</text>
+
+      <!-- Row 6 -->
+      <text x="36" y="334" font-family="'IBM Plex Sans', sans-serif" font-size="13" font-weight="600" fill="#1B211E">CS-316: Data Structures &amp; Algo</text>
+      <text x="370" y="334" font-family="'IBM Plex Sans', sans-serif" font-size="13" fill="#59655E">4</text>
+      <rect x="440" y="324" width="80" height="8" rx="4" fill="#E5DED4" />
+      <rect x="440" y="324" width="66" height="8" rx="4" fill="#23533D" />
+      <text x="550" y="334" font-family="'IBM Plex Sans', sans-serif" font-size="12" font-weight="600" fill="#23533D">A (87%)</text>
+
+      <!-- Bottom Card Action -->
+      <rect x="20" y="420" width="580" height="46" rx="8" fill="#F8F4ED" />
+      <text x="210" y="448" font-family="'IBM Plex Sans', sans-serif" font-size="13" font-weight="600" fill="#23533D">Explore Complete Grade Book &amp; Transcripts &#8594;</text>
+    </g>
+
+    <!-- Section 2: Notice Board and Deadlines -->
+    <g transform="translate(936, 300)">
+      <rect width="340" height="490" rx="12" fill="#FFFFFF" stroke="#E5DED4" stroke-width="1" />
+      <text x="24" y="36" font-family="'Sora', sans-serif" font-size="16" font-weight="700" fill="#1B211E">Upcoming Deadlines</text>
+
+      <!-- Deadline 1 -->
+      <rect x="20" y="60" width="300" height="84" rx="8" fill="#FAF7F2" stroke="#E5DED4" stroke-width="1" />
+      <rect x="20" y="60" width="4" height="84" rx="2" fill="#B85437" />
+      <text x="36" y="86" font-family="'IBM Plex Sans', sans-serif" font-size="13" font-weight="700" fill="#1B211E">Web Engineering Project</text>
+      <text x="36" y="104" font-family="'IBM Plex Sans', sans-serif" font-size="12" fill="#59655E">Sprint 2: Front-End UI Architecture</text>
+      <text x="36" y="126" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#B85437">Due in 2 Days · 11:59 PM</text>
+
+      <!-- Deadline 2 -->
+      <rect x="20" y="156" width="300" height="84" rx="8" fill="#FAF7F2" stroke="#E5DED4" stroke-width="1" />
+      <rect x="20" y="156" width="4" height="84" rx="2" fill="#23533D" />
+      <text x="36" y="182" font-family="'IBM Plex Sans', sans-serif" font-size="13" font-weight="700" fill="#1B211E">Android App Submission</text>
+      <text x="36" y="200" font-family="'IBM Plex Sans', sans-serif" font-size="12" fill="#59655E">Lab 05: Room Database &amp; RecyclerView</text>
+      <text x="36" y="222" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#23533D">Due in 5 Days</text>
+
+      <!-- Deadline 3 -->
+      <rect x="20" y="252" width="300" height="84" rx="8" fill="#FAF7F2" stroke="#E5DED4" stroke-width="1" />
+      <rect x="20" y="252" width="4" height="84" rx="2" fill="#527A64" />
+      <text x="36" y="278" font-family="'IBM Plex Sans', sans-serif" font-size="13" font-weight="700" fill="#1B211E">Database Systems Quiz</text>
+      <text x="36" y="296" font-family="'IBM Plex Sans', sans-serif" font-size="12" fill="#59655E">Relational Algebra &amp; Indexing</text>
+      <text x="36" y="318" font-family="'IBM Plex Sans', sans-serif" font-size="11" font-weight="600" fill="#527A64">Scheduled for Next Monday</text>
+
+      <!-- Quick Action -->
+      <rect x="20" y="420" width="300" height="46" rx="8" fill="#23533D" />
+      <text x="88" y="448" font-family="'IBM Plex Sans', sans-serif" font-size="13" font-weight="600" fill="#FFFFFF">Submit New Assignment &#8593;</text>
+    </g>
+  </g>
+</svg>
