@@ -1,51 +1,45 @@
 /**
- * E-commerce Portfolio — Vanilla JS
- * Mobile nav, scroll state, reveal, case study modal, contact form
+ * Zulqarnain Awan — Software Developer Portfolio
+ * Vanilla ES6+ JavaScript: Navigation, Scroll States, Reveal, Case Study Modal, Copy Actions
  */
 
 (function () {
   "use strict";
 
+  // DOM Elements
   const header = document.querySelector(".site-header");
   const toggle = document.querySelector(".navbar__toggle");
   const menu = document.querySelector("#primary-menu");
+  const backdrop = document.querySelector("[data-menu-backdrop]");
   const yearEl = document.querySelector("#year");
-  const form = document.querySelector("#contact-form");
-  const formStatus = document.querySelector("#form-status");
+  const toast = document.querySelector("#toast");
 
-  /* Current year in footer */
+  /* --------------------------------------------------------------------------
+     1. Current Year in Footer
+     -------------------------------------------------------------------------- */
   if (yearEl) {
     yearEl.textContent = String(new Date().getFullYear());
   }
 
-  /* Empty / missing image placeholders */
-  document.querySelectorAll(".dev-card__media img, .project-card__media img").forEach((img) => {
-    const markPlaceholder = () => img.classList.add("is-placeholder");
-
-    if (img.complete && img.naturalWidth === 0) {
-      markPlaceholder();
-    }
-
-    img.addEventListener("error", markPlaceholder);
-  });
-
-  /* Sticky header shadow on scroll */
+  /* --------------------------------------------------------------------------
+     2. Sticky Header Elevation on Scroll
+     -------------------------------------------------------------------------- */
   const updateHeaderState = () => {
     if (!header) return;
-    header.classList.toggle("is-scrolled", window.scrollY > 12);
+    header.classList.toggle("is-scrolled", window.scrollY > 16);
   };
 
   updateHeaderState();
   window.addEventListener("scroll", updateHeaderState, { passive: true });
 
-  /* Mobile navigation */
-  const backdrop = document.querySelector("[data-menu-backdrop]");
-
+  /* --------------------------------------------------------------------------
+     3. Accessible Mobile Navigation
+     -------------------------------------------------------------------------- */
   const setMenuOpen = (open) => {
     if (!toggle || !menu) return;
     menu.classList.toggle("is-open", open);
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
-    toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    toggle.setAttribute("aria-label", open ? "Close navigation menu" : "Open navigation menu");
     document.body.classList.toggle("mobile-menu-open", open);
     if (backdrop) backdrop.hidden = !open;
   };
@@ -86,21 +80,17 @@
     );
   }
 
-  /* Scroll reveal — sections & key blocks only */
+  /* --------------------------------------------------------------------------
+     4. Scroll Reveal Animations (IntersectionObserver)
+     -------------------------------------------------------------------------- */
   const revealTargets = document.querySelectorAll(
-    ".section__header, .service-card, .project-card, .other-project-card, .skills-list, .about__content, .why-list, .contact__details, .contact-form, .contact__cta-panel, .hero__content, .hero__visual"
+    ".section__header, .project-card, .skill-category-card, .service-card, .about-block, .education-card, .contact__details, .contact__cta-panel"
   );
 
   revealTargets.forEach((el, index) => {
     el.classList.add("reveal");
-    if (el.classList.contains("project-card") || el.classList.contains("service-card") || el.classList.contains("other-project-card")) {
-      const delay = (index % 3) + 1;
-      el.classList.add(`reveal-delay-${delay}`);
-    }
-  });
-
-  document.querySelectorAll(".hero .reveal").forEach((el) => {
-    el.classList.add("is-visible");
+    const delay = (index % 3) + 1;
+    el.classList.add(`reveal-delay-${delay}`);
   });
 
   if ("IntersectionObserver" in window) {
@@ -112,140 +102,173 @@
           obs.unobserve(entry.target);
         });
       },
-      { threshold: 0.14, rootMargin: "0px 0px -8% 0px" }
+      { threshold: 0.12, rootMargin: "0px 0px -40px 0px" }
     );
 
-    revealTargets.forEach((el) => {
-      if (!el.classList.contains("is-visible")) observer.observe(el);
-    });
+    revealTargets.forEach((el) => observer.observe(el));
   } else {
     revealTargets.forEach((el) => el.classList.add("is-visible"));
   }
 
-  /* Case study modal data (client project + concept builds) */
+  /* --------------------------------------------------------------------------
+     5. Case Study Modal Data & Interactive Dialog
+     -------------------------------------------------------------------------- */
   const caseStudies = {
     mbacraftmart: {
-      title: "MBAcraftmart Shopify Store",
+      title: "MBAcraftmart – Shopify E-commerce Store",
       category: "Shopify Store · Client Project",
       badge: "Client Project",
       image: "assets/images/project-mbacraftmart.png",
-      imageAlt: "MBAcraftmart Shopify store preview — bouquets, arts and crafts, and gift hampers",
+      imageAlt: "MBAcraftmart Shopify store storefront and mobile layout mockup",
       demoUrl: "https://mbacraftmart.myshopify.com/",
+      githubUrl: "",
       disclaimer:
-        "Client project built as a Shopify developer and service provider for a friend. Configured the storefront using Shopify and the Dawn theme for a retail and gifting brand in Pakistan.",
+        "Client project developed as a Shopify Store Developer and technical service provider for a retail brand in Pakistan. Configured the storefront using Shopify and the Dawn theme for localized e-commerce fulfillment.",
       overview:
-        "MBAcraftmart is an e-commerce storefront dedicated to handcrafted floral bouquets, custom arts and crafts, and curated gift hampers. The store was established on Shopify utilizing the Dawn theme to deliver a clean, trustworthy product showcase tailored for local fulfillment across Pakistan.",
+        "MBAcraftmart is an e-commerce storefront dedicated to handcrafted floral bouquets, custom arts and crafts, and curated gift hampers. Built on Shopify using the Dawn theme to deliver a clean, trustworthy product showcase tailored for local fulfillment across Pakistan.",
       objective:
         "Build a polished and accessible Shopify storefront highlighting product craftsmanship and gift collections, with an emphasis on seamless mobile browsing and clear category navigation for customers throughout Pakistan.",
       features: [
-        "Shopify Dawn theme setup and storefront customization",
-        "Catalog categorization for bouquets, crafts, and gift hampers",
-        "Mobile-first product grid and clear variant browsing",
-        "Configured for Pakistan target market and local fulfillment",
-        "Streamlined navigation structure for gifting occasions"
+        "Developed and customized a Shopify storefront using the Dawn theme",
+        "Catalog categorization for floral bouquets, artisanal crafts, and curated gift hampers",
+        "Mobile-first product grid, variant selectors, and premium image presentation",
+        "Configured for Pakistan target market with localized fulfillment workflows",
+        "Streamlined navigation structure for gifting occasions and repeat purchases"
       ],
-      technologies: ["Shopify", "Dawn Theme", "Liquid", "CSS3", "Mobile-First Design"],
+      technologies: ["Shopify", "Dawn Theme", "Liquid", "HTML5", "CSS3", "JavaScript"],
       responsive:
-        "Structured and tested specifically for mobile devices, which represent the dominant channel for online shopping in Pakistan, ensuring fluid browsing, fast visual loading, and intuitive purchase actions across screens."
+        "Engineered with a mobile-first focus, recognizing mobile devices as the primary online shopping channel in Pakistan. The layout ensures swift image rendering, effortless touch interactions, and a clean path to checkout across phones, tablets, and desktops."
     },
+
+    "lms-project": {
+      title: "LMS-PROJECT — Learning Management Portal",
+      category: "Academic · Software Engineering Project",
+      badge: "Academic Project",
+      image: "assets/images/project-lms.svg",
+      imageAlt: "LMS Project — Learning Management System dashboard and portal preview",
+      demoUrl: "https://zulqarnainawan441.github.io/LMS/LMS-PROJECT/",
+      githubUrl: "https://github.com/zulqarnainawan441/LMS",
+      disclaimer:
+        "An academic and personal software engineering project demonstrating modern software design, complex state presentation, and responsive dashboard architecture.",
+      overview:
+        "LMS-PROJECT is a comprehensive learning management portal built to support academic institutions. It features integrated portals for both students and faculty administrators, covering course schedules, assignment tracking, quizzes, attendance ledgers, fee management, and lecture notes.",
+      objective:
+        "Develop an intuitive, performant web application that streamlines academic administration into a unified, accessible interface without heavy runtime dependencies.",
+      features: [
+        "Integrated student and administrator multi-role dashboard views",
+        "Course module tracking with interactive progress meters and grade books",
+        "Assignment timeline with status tracking and deadline alerts",
+        "Detailed attendance ledger with percentage calculations and history",
+        "Fee ledger status monitoring with zero-dues verification"
+      ],
+      technologies: ["JavaScript (ES6+)", "HTML5", "CSS3", "UI Architecture", "Responsive Design"],
+      responsive:
+        "Layout reflows smoothly from single-column mobile cards to multi-column desktop data grids, keeping academic schedules and grade information easily scannable on any screen."
+    },
+
     urbanwear: {
-      title: "UrbanWear",
-      category: "Fashion E-commerce",
-      badge: "Concept Project",
+      title: "UrbanWear — Apparel Storefront",
+      category: "Fashion E-commerce · Concept Build",
+      badge: "Concept Build",
       image: "assets/images/project-fashion.jpg",
-      imageAlt: "UrbanWear fashion e-commerce demo store preview",
+      imageAlt: "UrbanWear fashion e-commerce storefront preview",
       demoUrl: "https://zulqarnainawan441.github.io/Urban-wear/UrbanWear/",
+      githubUrl: "https://github.com/zulqarnainawan441/Urban-wear",
       disclaimer:
-        "This is a demo / concept project created to showcase e-commerce frontend skills. It is not presented as a real client engagement.",
+        "Demo and concept project created to showcase e-commerce frontend engineering, responsive grid layouts, and mobile-first shopping UX.",
       overview:
-        "UrbanWear is a fashion storefront concept focused on helping shoppers browse apparel collections with clarity. The project explores category structure, product presentation, and a mobile-first shopping path typical of modern clothing brands.",
+        "UrbanWear is a contemporary apparel storefront designed for intuitive collection browsing, product storytelling, and frictionless navigation across mobile and desktop devices.",
       objective:
-        "Design a responsive fashion e-commerce experience where users can move from collection browsing to product detail without confusion, especially on smaller screens.",
+        "Create an engaging fashion retail experience with fast page loads, scannable product cards, responsive category filters, and an accessible shopping flow.",
       features: [
-        "Category-led product browsing",
-        "Responsive product grid layouts",
-        "Clear product detail hierarchy",
-        "Mobile-friendly navigation patterns",
-        "Conversion-focused call-to-action placement"
+        "Dynamic category navigation and collection filtering",
+        "Responsive product grid with high-fidelity visual cards",
+        "Clear product detail hierarchy and sizing selection",
+        "Mobile-first checkout and shopping bag experience",
+        "Smooth micro-interactions and transitions"
       ],
-      technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
+      technologies: ["HTML5", "CSS3", "JavaScript", "Grid & Flexbox", "Mobile-First"],
       responsive:
-        "Layouts adapt from single-column mobile browsing to multi-column desktop grids. Touch targets, spacing, and typography were tuned so apparel shopping remains comfortable across phone, tablet, and desktop viewports."
+        "Built using CSS Grid and Flexbox to adapt effortlessly across narrow mobile displays, tablets, laptops, and ultra-wide desktops."
     },
+
     glowskin: {
-      title: "GlowSkin",
-      category: "Cosmetics E-commerce",
-      badge: "Concept Project",
+      title: "GlowSkin — Beauty & Skincare Storefront",
+      category: "Cosmetics E-commerce · Concept Build",
+      badge: "Concept Build",
       image: "assets/images/project-cosmetics.jpg",
-      imageAlt: "GlowSkin cosmetics e-commerce demo store preview",
+      imageAlt: "GlowSkin cosmetics e-commerce demo storefront preview",
       demoUrl: "",
+      githubUrl: "",
       disclaimer:
-        "This is a demo / concept project created to showcase e-commerce frontend skills. It is not presented as a real client engagement.",
+        "Concept prototype demonstrating frontend product storytelling, calm visual hierarchy, and component-based e-commerce layout design.",
       overview:
-        "GlowSkin is a cosmetics storefront concept centered on product storytelling and trust. The layout balances brand presentation with a practical path toward product selection and purchase.",
+        "GlowSkin balances brand elegance with practical shopping utility, presenting clean skincare product collections with dedicated ingredient spotlights and a calm visual rhythm.",
       objective:
-        "Create a beauty e-commerce experience that feels polished and calm while keeping product information easy to scan and the shopping flow simple.",
+        "Build an accessible, calm, and trustworthy beauty shopping experience that highlights ingredient safety and product benefits.",
       features: [
-        "Product storytelling sections",
-        "Ingredient-focused product layout",
-        "Soft visual hierarchy for brand trust",
-        "Streamlined add-to-cart oriented structure",
-        "Consistent mobile and desktop product pages"
+        "Editorial product storytelling sections",
+        "Ingredient transparency cards and benefits breakdown",
+        "Calm, high-contrast visual hierarchy",
+        "Streamlined add-to-cart layout with variant indicators"
       ],
       technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
       responsive:
-        "Content blocks reflow for narrower screens so storytelling sections remain readable. Product details stack cleanly on mobile while preserving a refined, desktop-ready presentation."
+        "Fluid typography and flex-wrap layouts ensure storytelling blocks reflow gracefully across screen sizes without awkward line wrapping or horizontal overflow."
     },
+
     techzone: {
-      title: "TechZone",
-      category: "Electronics E-commerce",
-      badge: "Concept Project",
+      title: "TechZone — Electronics & Hardware Catalog",
+      category: "Electronics Catalog · Concept Build",
+      badge: "Concept Build",
       image: "assets/images/project-electronics.jpg",
-      imageAlt: "TechZone electronics e-commerce demo store preview",
+      imageAlt: "TechZone electronics catalog demo preview",
       demoUrl: "",
+      githubUrl: "",
       disclaimer:
-        "This is a demo / concept project created to showcase e-commerce frontend skills. It is not presented as a real client engagement.",
+        "Concept project engineered to demonstrate catalog density, structured specification breakdowns, and multi-attribute filtering.",
       overview:
-        "TechZone is an electronics catalog concept designed for structured browsing. It focuses on scannable product cards, clear CTAs, and an organized information hierarchy for tech shoppers.",
+        "TechZone is designed for tech consumers requiring clear, scannable product comparisons and structured specifications without visual clutter.",
       objective:
-        "Help users compare and explore electronics products quickly without a cluttered or overwhelming storefront experience.",
+        "Provide an organized catalog interface that makes technical comparison and discovery fast and dependable.",
       features: [
-        "Structured product catalog sections",
-        "Comparison-friendly product cards",
-        "Strong call-to-action hierarchy",
-        "Responsive multi-column grids",
-        "Clear product information grouping"
+        "Scannable technical specification badges",
+        "Comparison-friendly card structure",
+        "Multi-column responsive hardware grids",
+        "High-contrast CTA hierarchy"
       ],
-      technologies: ["HTML5", "CSS3", "JavaScript", "Responsive Design"],
+      technologies: ["HTML5", "CSS3", "JavaScript", "Component Architecture"],
       responsive:
-        "Catalog grids collapse from multi-column desktop layouts into readable mobile stacks. Key product actions remain visible and accessible at every breakpoint."
+        "Multi-column grids that gracefully collapse into readable mobile stacks at narrower viewports, ensuring all product specs remain legible."
     },
+
     "shopify-store": {
-      title: "Shopify Store",
-      category: "Shopify E-commerce",
-      badge: "Concept Project",
+      title: "Shopify Custom Theme Architecture",
+      category: "Shopify Development · Theme Build",
+      badge: "Theme Build",
       image: "assets/images/project-shopify.jpg",
-      imageAlt: "Shopify e-commerce demo project preview",
+      imageAlt: "Shopify custom theme architecture and product page preview",
       demoUrl: "",
+      githubUrl: "",
       disclaimer:
-        "This is a demo / concept project created to showcase Shopify and Liquid skills. It is not presented as a real client engagement.",
+        "Technical demonstration of Shopify Dawn theme customization, section architecture, and Liquid templating.",
       overview:
-        "This Shopify concept project demonstrates theme customization and product-page refinement using Liquid and frontend styling. The focus is clearer merchandising and a more conversion-friendly storefront structure.",
+        "Demonstrates advanced Shopify theme customizations using Liquid, modular section blocks, and conversion-oriented product page design.",
       objective:
-        "Show how Shopify theme work can improve product presentation, section structure, and shopping clarity for an online store.",
+        "Illustrate modular section development and theme performance optimization for modern Shopify merchants.",
       features: [
-        "Shopify theme customization patterns",
-        "Liquid-powered product sections",
-        "Improved product page layout",
-        "Conversion-oriented page structure",
-        "Reusable section-based storefront organization"
+        "Custom Liquid section schema and settings",
+        "Dynamic collection and featured product blocks",
+        "Optimized mobile navigation and variant selection",
+        "Clean integration with Shopify Dawn theme conventions"
       ],
-      technologies: ["Shopify", "Liquid", "CSS3", "JavaScript"],
+      technologies: ["Shopify", "Liquid", "Dawn Theme", "CSS3", "JavaScript"],
       responsive:
-        "Theme sections were considered for Shopify’s responsive behavior across devices, with attention to product media, pricing blocks, and purchase actions on mobile and desktop."
+        "Engineered to adhere to Shopify's mobile-first responsive guidelines across handheld and desktop devices."
     }
   };
 
+  // Modal DOM elements
   const modal = document.querySelector("#case-modal");
   const modalBadge = document.querySelector("#case-modal-badge");
   const modalImage = document.querySelector("#case-modal-image");
@@ -258,6 +281,8 @@
   const modalTech = document.querySelector("#case-modal-tech");
   const modalResponsive = document.querySelector("#case-modal-responsive");
   const modalDemo = document.querySelector("#case-modal-demo");
+  const modalGithub = document.querySelector("#case-modal-github");
+
   let lastFocus = null;
 
   const fillList = (listEl, items) => {
@@ -277,38 +302,52 @@
     lastFocus = document.activeElement;
 
     if (modalBadge) {
-      modalBadge.textContent = study.badge || "Concept Project";
+      modalBadge.textContent = study.badge || "Project Case Study";
       modalBadge.classList.toggle("case-modal__badge--client", study.badge === "Client Project");
     }
 
-    modalCategory.textContent = study.category;
-    modalTitle.textContent = study.title;
-    modalDisclaimer.textContent = study.disclaimer;
-    modalOverview.textContent = study.overview;
-    modalObjective.textContent = study.objective;
-    modalResponsive.textContent = study.responsive;
+    if (modalCategory) modalCategory.textContent = study.category;
+    if (modalTitle) modalTitle.textContent = study.title;
+    if (modalDisclaimer) modalDisclaimer.textContent = study.disclaimer;
+    if (modalOverview) modalOverview.textContent = study.overview;
+    if (modalObjective) modalObjective.textContent = study.objective;
+    if (modalResponsive) modalResponsive.textContent = study.responsive;
+
     fillList(modalFeatures, study.features);
     fillList(modalTech, study.technologies);
 
-    modalImage.src = study.image;
-    modalImage.alt = study.imageAlt;
-    modalImage.classList.remove("is-placeholder");
-    modalImage.onerror = () => modalImage.classList.add("is-placeholder");
+    if (modalImage) {
+      modalImage.src = study.image;
+      modalImage.alt = study.imageAlt;
+    }
 
+    // Demo Link
     if (modalDemo) {
       if (study.demoUrl && study.demoUrl !== "#") {
         modalDemo.href = study.demoUrl;
         modalDemo.hidden = false;
-        modalDemo.removeAttribute("aria-disabled");
       } else {
         modalDemo.hidden = true;
         modalDemo.removeAttribute("href");
       }
     }
 
+    // GitHub Link
+    if (modalGithub) {
+      if (study.githubUrl && study.githubUrl !== "#") {
+        modalGithub.href = study.githubUrl;
+        modalGithub.hidden = false;
+      } else {
+        modalGithub.hidden = true;
+        modalGithub.removeAttribute("href");
+      }
+    }
+
     modal.hidden = false;
     document.body.classList.add("case-modal-open");
-    modal.querySelector(".case-modal__close")?.focus();
+
+    const closeBtn = modal.querySelector(".case-modal__close");
+    closeBtn?.focus();
   };
 
   const closeCaseStudy = () => {
@@ -320,95 +359,89 @@
     }
   };
 
+  // Open modal triggers
   document.querySelectorAll("[data-case-open]").forEach((button) => {
     button.addEventListener("click", () => {
       openCaseStudy(button.getAttribute("data-case-open"));
     });
   });
 
+  // Close modal triggers
   document.querySelectorAll("[data-case-close]").forEach((el) => {
     el.addEventListener("click", closeCaseStudy);
   });
 
+  // Keyboard navigation inside modal (Escape + Tab trapping)
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") {
-      closeCaseStudy();
+      if (modal && !modal.hidden) {
+        closeCaseStudy();
+      }
       setMenuOpen(false);
+      return;
     }
-  });
 
-  /* Live demo placeholders — prevent dead jumps until URLs are added */
-  document.querySelectorAll("[data-demo-link]").forEach((link) => {
-    link.addEventListener("click", (event) => {
-      if (!link.getAttribute("href") || link.getAttribute("href") === "#") {
-        event.preventDefault();
-        link.setAttribute("title", "Replace this href with your live demo URL");
-      }
-    });
-  });
-
-  modalDemo?.addEventListener("click", (event) => {
-    if (!modalDemo.getAttribute("href") || modalDemo.getAttribute("href") === "#") {
-      event.preventDefault();
-    }
-  });
-
-  /* Contact form — client-side validation only (if present) */
-  if (form) {
-    const nameInput = form.querySelector("#name");
-    const emailInput = form.querySelector("#email");
-    const messageInput = form.querySelector("#message");
-
-    const setStatus = (message, type) => {
-      if (!formStatus) return;
-      formStatus.textContent = message;
-      formStatus.classList.remove("is-success", "is-error");
-      if (type) formStatus.classList.add(type);
-    };
-
-    const validateEmail = (value) =>
-      /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(String(value).trim());
-
-    form.addEventListener("submit", (event) => {
-      event.preventDefault();
-
-      [nameInput, emailInput, messageInput].forEach((field) => {
-        if (field) {
-          field.classList.remove("is-invalid");
-          field.setAttribute("aria-invalid", "false");
-        }
-      });
-
-      let valid = true;
-
-      if (!nameInput || !nameInput.value.trim()) {
-        nameInput?.classList.add("is-invalid");
-        nameInput?.setAttribute("aria-invalid", "true");
-        valid = false;
-      }
-
-      if (!emailInput || !validateEmail(emailInput.value)) {
-        emailInput?.classList.add("is-invalid");
-        emailInput?.setAttribute("aria-invalid", "true");
-        valid = false;
-      }
-
-      if (!messageInput || !messageInput.value.trim()) {
-        messageInput?.classList.add("is-invalid");
-        messageInput?.setAttribute("aria-invalid", "true");
-        valid = false;
-      }
-
-      if (!valid) {
-        setStatus("Please fill in all fields with a valid email address.", "is-error");
-        return;
-      }
-
-      setStatus(
-        "Thanks — your message looks ready. Connect this form to your email service (or replace the button with mailto) to send it.",
-        "is-success"
+    // Focus trap inside modal
+    if (modal && !modal.hidden && event.key === "Tab") {
+      const focusable = modal.querySelectorAll(
+        'button:not([hidden]), [href]:not([hidden]), input:not([hidden]), [tabindex]:not([tabindex="-1"])'
       );
-      form.reset();
+      if (focusable.length === 0) return;
+
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
+  });
+
+  /* --------------------------------------------------------------------------
+     6. Copy to Clipboard Action
+     -------------------------------------------------------------------------- */
+  const showToast = (message) => {
+    if (!toast) return;
+    toast.textContent = message;
+    toast.classList.add("is-active");
+    setTimeout(() => {
+      toast.classList.remove("is-active");
+    }, 2400);
+  };
+
+  document.querySelectorAll("[data-copy]").forEach((btn) => {
+    btn.addEventListener("click", async () => {
+      const textToCopy = btn.getAttribute("data-copy");
+      if (!textToCopy) return;
+
+      try {
+        if (navigator.clipboard && navigator.clipboard.writeText) {
+          await navigator.clipboard.writeText(textToCopy);
+        } else {
+          const textarea = document.createElement("textarea");
+          textarea.value = textToCopy;
+          textarea.style.position = "fixed";
+          textarea.style.opacity = "0";
+          document.body.appendChild(textarea);
+          textarea.select();
+          document.execCommand("copy");
+          document.body.removeChild(textarea);
+        }
+
+        const tip = btn.querySelector(".btn-copy__tip");
+        if (tip) tip.textContent = "Copied!";
+        showToast(`Copied to clipboard: ${textToCopy}`);
+
+        setTimeout(() => {
+          if (tip) tip.textContent = "Copy";
+        }, 2000);
+      } catch (err) {
+        showToast("Unable to copy to clipboard.");
+      }
     });
-  }
+  });
 })();
