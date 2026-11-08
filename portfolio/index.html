@@ -3,34 +3,53 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Zulqarnain Awan — freelance e-commerce web developer building Shopify and WooCommerce storefronts for small businesses and online brands.">
+  <meta name="description" content="Zulqarnain Awan — Software Developer specializing in modern web experiences, Android applications, and customized e-commerce solutions. BSIT from University of Sargodha.">
   <meta name="author" content="Zulqarnain Awan">
-  <meta property="og:title" content="Zulqarnain Awan — E-commerce Web Developer">
-  <meta property="og:description" content="Shopify and WooCommerce storefronts built clean, fast, and mobile-first.">
+  <meta name="theme-color" content="#FAF7F2">
+
+  <!-- Open Graph / Social Meta -->
+  <meta property="og:title" content="Zulqarnain Awan — Software Developer">
+  <meta property="og:description" content="Building modern web experiences, Android applications, and customized e-commerce solutions.">
   <meta property="og:type" content="website">
   <meta property="og:url" content="https://zulqarnainawan441.github.io/portfolio/">
-  <title>Zulqarnain Awan — E-commerce Web Developer</title>
+  <meta property="og:image" content="assets/images/profile.jpg">
+
+  <title>Zulqarnain Awan — Software Developer | Web, Android &amp; E-commerce</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="assets/icons/favicon.svg">
+
+  <!-- Preconnect & Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Sora:wght@500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Sora:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Font Awesome 6 -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.2/css/all.min.css">
+
+  <!-- Main Stylesheet -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <a class="skip-link" href="#main">Skip to content</a>
+  <!-- Skip to Content for Keyboard Accessibility -->
+  <a class="skip-link" href="#main">Skip to main content</a>
 
+  <!-- Header / Navigation -->
   <header class="site-header" id="top">
     <div class="navbar__backdrop" data-menu-backdrop hidden></div>
-    <nav class="navbar" aria-label="Primary">
+    <nav class="navbar" aria-label="Primary Navigation">
       <div class="container navbar__inner">
-        <a class="navbar__brand" href="#top">Zulqarnain Awan</a>
+        <a class="navbar__brand" href="#top" aria-label="Zulqarnain Awan Home">
+          <span class="navbar__brand-indicator" aria-hidden="true"></span>
+          <span class="navbar__brand-text">Zulqarnain Awan</span>
+        </a>
 
         <button
           class="navbar__toggle"
           type="button"
           aria-expanded="false"
           aria-controls="primary-menu"
-          aria-label="Open menu"
+          aria-label="Open navigation menu"
         >
           <span class="navbar__toggle-bar" aria-hidden="true"></span>
           <span class="navbar__toggle-bar" aria-hidden="true"></span>
@@ -38,49 +57,89 @@
         </button>
 
         <ul class="navbar__menu" id="primary-menu">
-          <li><a href="#work">Work</a></li>
-          <li><a href="#services">Services</a></li>
+          <li><a href="#work">Projects</a></li>
+          <li><a href="#skills">Skills</a></li>
           <li><a href="#about">About</a></li>
-          <li><a class="navbar__cta" href="#contact">Contact</a></li>
+          <li><a href="#education">Education</a></li>
+          <li><a href="#services">Services</a></li>
+          <li><a href="assets/docs/resume.html" target="_blank" rel="noopener noreferrer" class="navbar__resume-link"><i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i> Resume</a></li>
+          <li><a class="btn btn--primary navbar__cta" href="#contact">Contact</a></li>
         </ul>
       </div>
     </nav>
   </header>
 
   <main id="main">
-    <!-- Hero -->
-    <section class="hero" aria-labelledby="hero-heading">
+    <!-- Hero Section (Phase 3: Clear Software Developer positioning, no name repetition, strong hierarchy) -->
+    <section class="hero" aria-labelledby="hero-title">
       <div class="container hero__inner">
         <div class="hero__content">
-          <p class="hero__eyebrow">Freelance E-commerce Developer</p>
-          <h1 id="hero-heading">Shopify &amp; WooCommerce storefronts built to sell</h1>
-          <p class="hero__text">
-            I build fast, mobile-first online stores using Shopify, WooCommerce, HTML, CSS, and JavaScript — straightforward work, clearly delivered.
+          <div class="hero__status">
+            <span class="status-dot" aria-hidden="true"></span>
+            <span class="hero__eyebrow">Available for Developer Opportunities &amp; Projects</span>
+          </div>
+
+          <h1 id="hero-title" class="hero__title">Software Developer</h1>
+
+          <p class="hero__subtitle">
+            Building modern web experiences, Android applications, and customized e-commerce solutions.
           </p>
+
+          <!-- Core Specialism Badges -->
+          <div class="hero__specialisms" aria-label="Core Specializations">
+            <span class="specialism-badge">
+              <i class="fa-solid fa-code" aria-hidden="true"></i>
+              <span>Web Development</span>
+            </span>
+            <span class="specialism-badge">
+              <i class="fa-brands fa-android" aria-hidden="true"></i>
+              <span>Android Development</span>
+            </span>
+            <span class="specialism-badge">
+              <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+              <span>E-commerce Solutions</span>
+            </span>
+          </div>
+
+          <!-- Hero CTAs -->
           <div class="hero__actions">
-            <a class="btn btn--primary" href="#work">View My Work</a>
-            <a class="btn btn--outline" href="#contact">Get in Touch</a>
+            <a class="btn btn--primary" href="#work">
+              <span>View Projects</span>
+              <i class="fa-solid fa-arrow-down" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn--outline" href="#contact">
+              <span>Get in Touch</span>
+              <i class="fa-solid fa-paper-plane" aria-hidden="true"></i>
+            </a>
+            <a class="btn btn--secondary" href="assets/docs/resume.html" target="_blank" rel="noopener noreferrer">
+              <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+              <span>View CV / Resume</span>
+            </a>
           </div>
         </div>
 
-        <aside class="hero__visual" aria-label="Developer profile card">
+        <!-- Hero Profile Card (Aligned properly with 1:1 ratio, preventing awkward cropping) -->
+        <aside class="hero__visual" aria-label="Developer Profile Card">
           <div class="dev-card">
-            <div class="dev-card__media" data-placeholder="Add your profile photo — assets/images/profile.jpg">
+            <div class="dev-card__media">
               <img
                 src="assets/images/profile.jpg"
-                alt="Zulqarnain Awan — E-commerce Web Developer"
+                alt="Zulqarnain Awan — Software Developer"
                 width="480"
-                height="560"
+                height="480"
                 fetchpriority="high"
               >
             </div>
             <div class="dev-card__body">
-              <p class="dev-card__name">Zulqarnain Awan</p>
-              <p class="dev-card__role">E-commerce Web Developer</p>
-              <ul class="dev-card__tags" aria-label="Specialisms">
-                <li>Shopify</li>
-                <li>WooCommerce</li>
-                <li>Frontend</li>
+              <div class="dev-card__badge-row">
+                <span class="dev-badge"><i class="fa-solid fa-graduation-cap" aria-hidden="true"></i> BSIT University of Sargodha</span>
+              </div>
+              <p class="dev-card__tagline">Engineering performant web &amp; mobile solutions</p>
+              <ul class="dev-card__tags" aria-label="Key Technologies">
+                <li><i class="fa-brands fa-js" aria-hidden="true"></i> JavaScript</li>
+                <li><i class="fa-brands fa-android" aria-hidden="true"></i> Android Studio</li>
+                <li><i class="fa-brands fa-shopify" aria-hidden="true"></i> Shopify &amp; Liquid</li>
+                <li><i class="fa-solid fa-database" aria-hidden="true"></i> SQL</li>
               </ul>
             </div>
           </div>
@@ -88,379 +147,631 @@
       </div>
     </section>
 
-    <!-- Work -->
+    <!-- Projects Section (Phase 4: Real development work, consistent responsive cards) -->
     <section class="section section--work" id="work" aria-labelledby="work-heading">
       <div class="container container--wide">
         <header class="section__header section__header--split">
           <div>
-            <p class="section__eyebrow">Selected Work</p>
-            <h2 id="work-heading">Store builds &amp; e-commerce projects</h2>
+            <p class="section__eyebrow">Featured Work</p>
+            <h2 id="work-heading">Selected Projects &amp; Real-World Development</h2>
           </div>
           <p class="section__intro">
-            A showcase of client store work and frontend e-commerce concept builds, focusing on clean presentation, mobile usability, and dependable shopping flows.
+            A portfolio of client storefront work, academic software systems, and modern web applications developed with clean code, mobile-first responsiveness, and intuitive user experiences.
           </p>
         </header>
 
         <div class="projects-grid">
-          <!-- MBAcraftmart (Client Project) -->
+          <!-- 1. MBAcraftmart (Featured Client Project) -->
           <article class="project-card project-card--featured" data-project="mbacraftmart">
-            <div class="project-card__media" data-placeholder="MBAcraftmart · Shopify Dawn Theme">
+            <div class="project-card__media">
               <span class="project-card__badge project-card__badge--client" aria-label="Client project">Client Project</span>
               <img
                 src="assets/images/project-mbacraftmart.png"
-                alt="MBAcraftmart Shopify store preview — bouquets, arts and crafts, and gift hampers"
+                alt="MBAcraftmart Shopify store storefront and mobile layout mockup"
                 width="1536"
                 height="1024"
-                loading="lazy"
+                decoding="async"
               >
-              <div class="project-card__media-fallback" aria-hidden="true">
-                <div class="media-fallback__icon">
-                  <i class="fa-brands fa-shopify"></i>
-                </div>
-                <div class="media-fallback__title">MBAcraftmart</div>
-                <div class="media-fallback__sub">Shopify Storefront · Dawn Theme</div>
-                <div class="media-fallback__tags">Bouquets · Arts &amp; Crafts · Gift Hampers</div>
-              </div>
             </div>
             <div class="project-card__body">
               <div class="project-card__meta-top">
-                <p class="project-card__type project-card__type--client">Shopify Store · Client Project</p>
-                <span class="project-card__role-tag">Role: Shopify Developer</span>
+                <span class="project-card__type project-card__type--client">Shopify E-Commerce Store</span>
+                <span class="project-card__role-tag">Role: Shopify Store Developer</span>
               </div>
-              <h3>MBAcraftmart</h3>
-              <p class="project-card__desc">A customized Shopify storefront built on the Dawn theme for a Pakistan-based brand, highlighting premium bouquets, artisanal crafts, and curated gift hampers with localized fulfillment.</p>
+              <h3 class="project-card__title">MBAcraftmart – Shopify E-commerce Store</h3>
+              <p class="project-card__desc">
+                Developed and customized a Shopify storefront using the Dawn theme, focusing on premium visual presentation, product organization, collections, navigation, and customer shopping experience.
+              </p>
+              <p class="project-card__client-note">
+                <i class="fa-solid fa-circle-info" aria-hidden="true"></i>
+                <span>Client service project developed for a retail brand in Pakistan, featuring localized fulfillment workflows.</span>
+              </p>
               <ul class="tech-list" aria-label="Technologies used">
                 <li>Shopify</li>
                 <li>Dawn Theme</li>
                 <li>Liquid</li>
-                <li>CSS3</li>
-                <li>Local Fulfillment (PK)</li>
-              </ul>
-              <div class="project-card__actions">
-                <a class="btn btn--primary" href="https://mbacraftmart.myshopify.com/" target="_blank" rel="noopener noreferrer">
-                  <span>View Live Project</span>
-                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-                </a>
-                <button class="btn btn--outline btn--case" type="button" aria-label="Open case study for MBAcraftmart" data-case-open="mbacraftmart">Case Study</button>
-              </div>
-            </div>
-          </article>
-
-          <!-- UrbanWear -->
-          <article class="project-card" data-project="urbanwear">
-            <div class="project-card__media" data-placeholder="Replace with project-fashion.jpg">
-              <span class="project-card__badge" aria-label="Concept project">Concept</span>
-              <img
-                src="assets/images/project-fashion.jpg"
-                alt="UrbanWear — fashion storefront concept with mobile-first product grid"
-                width="720"
-                height="480"
-                loading="lazy"
-              >
-            </div>
-            <div class="project-card__body">
-              <p class="project-card__type">Fashion E-commerce · Concept</p>
-              <h3>UrbanWear</h3>
-              <p class="project-card__desc">A mobile-first fashion storefront exploring category navigation, responsive product grids, and a focused shopping flow.</p>
-              <ul class="tech-list" aria-label="Technologies used">
                 <li>HTML5</li>
                 <li>CSS3</li>
                 <li>JavaScript</li>
               </ul>
               <div class="project-card__actions">
-                <a class="btn btn--primary" href="https://zulqarnainawan441.github.io/Urban-wear/UrbanWear/" target="_blank" rel="noopener noreferrer">
-                  <span>View Live Project</span>
+                <a class="btn btn--primary" href="https://mbacraftmart.myshopify.com/" target="_blank" rel="noopener noreferrer">
+                  <span>View Live Store</span>
                   <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
                 </a>
-                <button class="btn btn--outline btn--case" type="button" aria-label="Open case study for UrbanWear" data-case-open="urbanwear">Case Study</button>
+                <button class="btn btn--outline btn--case" type="button" aria-label="Open case study for MBAcraftmart" data-case-open="mbacraftmart">
+                  <span>Case Study</span>
+                  <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
               </div>
             </div>
           </article>
 
-          <!-- GlowSkin -->
+          <!-- 2. LMS-PROJECT (Academic / Software Engineering Project) -->
+          <article class="project-card" data-project="lms-project">
+            <div class="project-card__media">
+              <span class="project-card__badge project-card__badge--academic" aria-label="Academic project">Academic Project</span>
+              <img
+                src="assets/images/project-lms.svg"
+                alt="LMS Project — Learning Management System dashboard and portal preview"
+                width="1536"
+                height="960"
+                decoding="async"
+              >
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta-top">
+                <span class="project-card__type">Academic · Software Application</span>
+                <span class="project-card__role-tag">Role: Frontend Developer</span>
+              </div>
+              <h3 class="project-card__title">LMS-PROJECT — Learning Management Portal</h3>
+              <p class="project-card__desc">
+                A learning management system interface covering unified student and administrator views — including course modules, assignment tracking, quizzes, attendance ledgers, fee management, and academic notes.
+              </p>
+              <ul class="tech-list" aria-label="Technologies used">
+                <li>JavaScript (ES6+)</li>
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>UI Architecture</li>
+                <li>Responsive Design</li>
+              </ul>
+              <div class="project-card__actions">
+                <a class="btn btn--primary" href="https://zulqarnainawan441.github.io/LMS/LMS-PROJECT/" target="_blank" rel="noopener noreferrer">
+                  <span>Live Demo</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+                <a class="btn btn--outline" href="https://github.com/zulqarnainawan441/LMS" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository for LMS Project">
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
+                  <span>GitHub</span>
+                </a>
+                <button class="btn btn--case" type="button" aria-label="Open case study for LMS Project" data-case-open="lms-project">
+                  <span>Case Study</span>
+                  <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 3. UrbanWear (Fashion E-commerce Storefront) -->
+          <article class="project-card" data-project="urbanwear">
+            <div class="project-card__media">
+              <span class="project-card__badge" aria-label="Concept project">Concept Build</span>
+              <img
+                src="assets/images/project-fashion.jpg"
+                alt="UrbanWear — modern fashion storefront with mobile-first product grid"
+                width="720"
+                height="480"
+                decoding="async"
+              >
+            </div>
+            <div class="project-card__body">
+              <div class="project-card__meta-top">
+                <span class="project-card__type">Fashion E-commerce</span>
+                <span class="project-card__role-tag">Role: Frontend Developer</span>
+              </div>
+              <h3 class="project-card__title">UrbanWear — Apparel Storefront</h3>
+              <p class="project-card__desc">
+                A mobile-first apparel storefront exploring dynamic category navigation, responsive product grids, interactive filtering, and an optimized customer checkout flow.
+              </p>
+              <ul class="tech-list" aria-label="Technologies used">
+                <li>HTML5</li>
+                <li>CSS3</li>
+                <li>JavaScript</li>
+                <li>Grid &amp; Flexbox</li>
+                <li>Mobile-First</li>
+              </ul>
+              <div class="project-card__actions">
+                <a class="btn btn--primary" href="https://zulqarnainawan441.github.io/Urban-wear/UrbanWear/" target="_blank" rel="noopener noreferrer">
+                  <span>Live Demo</span>
+                  <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+                </a>
+                <a class="btn btn--outline" href="https://github.com/zulqarnainawan441/Urban-wear" target="_blank" rel="noopener noreferrer" aria-label="GitHub Repository for UrbanWear">
+                  <i class="fa-brands fa-github" aria-hidden="true"></i>
+                  <span>GitHub</span>
+                </a>
+                <button class="btn btn--case" type="button" aria-label="Open case study for UrbanWear" data-case-open="urbanwear">
+                  <span>Case Study</span>
+                  <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
+              </div>
+            </div>
+          </article>
+
+          <!-- 4. GlowSkin (Cosmetics E-commerce Experience) -->
           <article class="project-card" data-project="glowskin">
-            <div class="project-card__media" data-placeholder="Replace with project-cosmetics.jpg">
-              <span class="project-card__badge" aria-label="Concept project">Concept</span>
+            <div class="project-card__media">
+              <span class="project-card__badge" aria-label="Concept project">Concept Build</span>
               <img
                 src="assets/images/project-cosmetics.jpg"
                 alt="GlowSkin — cosmetics store concept with product storytelling layout"
                 width="720"
                 height="480"
-                loading="lazy"
+                decoding="async"
               >
             </div>
             <div class="project-card__body">
-              <p class="project-card__type">Cosmetics E-commerce · Concept</p>
-              <h3>GlowSkin</h3>
-              <p class="project-card__desc">A beauty store layout focused on product storytelling, calm visual hierarchy, and a clear path to purchase.</p>
+              <div class="project-card__meta-top">
+                <span class="project-card__type">Cosmetics E-commerce</span>
+                <span class="project-card__role-tag">Role: Frontend Developer</span>
+              </div>
+              <h3 class="project-card__title">GlowSkin — Beauty &amp; Skincare</h3>
+              <p class="project-card__desc">
+                A cosmetics storefront layout focused on product storytelling, ingredient transparency breakdowns, calm visual hierarchy, and an accessible shopping path.
+              </p>
               <ul class="tech-list" aria-label="Technologies used">
                 <li>HTML5</li>
                 <li>CSS3</li>
                 <li>JavaScript</li>
+                <li>Responsive UI</li>
               </ul>
               <div class="project-card__actions">
-                <button class="btn btn--outline btn--case" type="button" aria-label="Open case study for GlowSkin" data-case-open="glowskin">Case Study</button>
+                <button class="btn btn--primary btn--case" type="button" aria-label="Open case study for GlowSkin" data-case-open="glowskin">
+                  <span>Case Study &amp; Architecture</span>
+                  <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
               </div>
             </div>
           </article>
 
-          <!-- TechZone -->
+          <!-- 5. TechZone (Electronics Catalog) -->
           <article class="project-card" data-project="techzone">
-            <div class="project-card__media" data-placeholder="Replace with project-electronics.jpg">
-              <span class="project-card__badge" aria-label="Concept project">Concept</span>
+            <div class="project-card__media">
+              <span class="project-card__badge" aria-label="Concept project">Concept Build</span>
               <img
                 src="assets/images/project-electronics.jpg"
                 alt="TechZone — electronics catalog concept with comparison-friendly product cards"
                 width="720"
                 height="480"
-                loading="lazy"
+                decoding="async"
               >
             </div>
             <div class="project-card__body">
-              <p class="project-card__type">Electronics E-commerce · Concept</p>
-              <h3>TechZone</h3>
-              <p class="project-card__desc">An electronics catalog built around scannable product cards, clear CTAs, and responsive multi-column grids.</p>
+              <div class="project-card__meta-top">
+                <span class="project-card__type">Electronics Catalog</span>
+                <span class="project-card__role-tag">Role: Frontend Developer</span>
+              </div>
+              <h3 class="project-card__title">TechZone — Hardware Catalog</h3>
+              <p class="project-card__desc">
+                An electronics catalog engineered around comparison-friendly product cards, structured technical specifications, and scannable multi-column grid layouts.
+              </p>
               <ul class="tech-list" aria-label="Technologies used">
                 <li>HTML5</li>
                 <li>CSS3</li>
                 <li>JavaScript</li>
+                <li>Component Architecture</li>
               </ul>
               <div class="project-card__actions">
-                <button class="btn btn--outline btn--case" type="button" aria-label="Open case study for TechZone" data-case-open="techzone">Case Study</button>
+                <button class="btn btn--primary btn--case" type="button" aria-label="Open case study for TechZone" data-case-open="techzone">
+                  <span>Case Study &amp; Architecture</span>
+                  <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
               </div>
             </div>
           </article>
 
-          <!-- Shopify Theme -->
+          <!-- 6. Shopify Theme Customisation -->
           <article class="project-card" data-project="shopify-store">
-            <div class="project-card__media" data-placeholder="Replace with project-shopify.jpg">
-              <span class="project-card__badge" aria-label="Concept project">Concept</span>
+            <div class="project-card__media">
+              <span class="project-card__badge" aria-label="Theme Customization project">Theme Build</span>
               <img
                 src="assets/images/project-shopify.jpg"
-                alt="Shopify theme concept — customised product pages and conversion-focused storefront layout"
+                alt="Shopify theme concept — custom product page architecture and Liquid blocks"
                 width="720"
                 height="480"
-                loading="lazy"
+                decoding="async"
               >
             </div>
             <div class="project-card__body">
-              <p class="project-card__type">Shopify · Concept</p>
-              <h3>Shopify Theme Customisation</h3>
-              <p class="project-card__desc">A Shopify concept demonstrating theme customisation with Liquid, improved product-page layout, and section-based structure.</p>
+              <div class="project-card__meta-top">
+                <span class="project-card__type">Shopify Theme Customization</span>
+                <span class="project-card__role-tag">Role: Shopify Developer</span>
+              </div>
+              <h3 class="project-card__title">Shopify Theme Customization</h3>
+              <p class="project-card__desc">
+                A Shopify architecture demonstration showcasing custom Liquid section development, modular schema settings, enhanced product detail templates, and mobile optimization.
+              </p>
               <ul class="tech-list" aria-label="Technologies used">
                 <li>Shopify</li>
                 <li>Liquid</li>
+                <li>Theme Sections</li>
                 <li>CSS3</li>
                 <li>JavaScript</li>
               </ul>
               <div class="project-card__actions">
-                <button class="btn btn--outline btn--case" type="button" aria-label="Open case study for Shopify Theme" data-case-open="shopify-store">Case Study</button>
+                <button class="btn btn--primary btn--case" type="button" aria-label="Open case study for Shopify Theme" data-case-open="shopify-store">
+                  <span>Case Study &amp; Architecture</span>
+                  <i class="fa-solid fa-chevron-right" aria-hidden="true"></i>
+                </button>
               </div>
-            </div>
-          </article>
-        </div>
-
-        <!-- LMS card -->
-        <div class="other-work">
-          <p class="section__eyebrow other-work__label">Also Built</p>
-          <article class="other-project-card">
-            <div class="other-project-card__content">
-              <div class="other-project-card__header">
-                <h3>LMS-PROJECT</h3>
-                <p class="other-project-card__type">Academic · Personal Frontend Project</p>
-              </div>
-              <p>A learning management system interface built as a personal project, covering student and admin views — dashboards, assignments, quizzes, attendance, fees, and notes.</p>
-              <ul class="tech-list" aria-label="Technologies used">
-                <li>HTML5</li>
-                <li>CSS3</li>
-                <li>Vanilla JavaScript</li>
-              </ul>
-            </div>
-            <div class="project-card__actions">
-              <a class="btn btn--primary" href="https://zulqarnainawan441.github.io/LMS/LMS-PROJECT/" target="_blank" rel="noopener noreferrer">
-                <span>View Live Project</span>
-                <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-              </a>
             </div>
           </article>
         </div>
       </div>
     </section>
 
-    <!-- Case study modal -->
-    <div
-      class="case-modal"
-      id="case-modal"
-      hidden
-      role="dialog"
-      aria-modal="true"
-      aria-labelledby="case-modal-title"
-    >
-      <div class="case-modal__backdrop" data-case-close></div>
-      <div class="case-modal__panel" role="document">
-        <button class="case-modal__close" type="button" data-case-close aria-label="Close case study">
-          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
-        </button>
-
-        <div class="case-modal__media">
-          <img id="case-modal-image" src="" alt="" width="960" height="540" loading="lazy">
-          <p class="case-modal__badge" id="case-modal-badge">Concept Project</p>
-        </div>
-
-        <div class="case-modal__content">
-          <p class="case-modal__category" id="case-modal-category"></p>
-          <h2 id="case-modal-title"></h2>
-          <p class="case-modal__disclaimer" id="case-modal-disclaimer"></p>
-
-          <div class="case-modal__grid">
-            <section>
-              <h3>Overview</h3>
-              <p id="case-modal-overview"></p>
-            </section>
-            <section>
-              <h3>Objective</h3>
-              <p id="case-modal-objective"></p>
-            </section>
-            <section>
-              <h3>Features</h3>
-              <ul id="case-modal-features"></ul>
-            </section>
-            <section>
-              <h3>Technologies</h3>
-              <ul class="tech-list" id="case-modal-tech"></ul>
-            </section>
-            <section class="case-modal__responsive">
-              <h3>Responsive Design</h3>
-              <p id="case-modal-responsive"></p>
-            </section>
-          </div>
-
-          <div class="case-modal__actions">
-            <a class="btn btn--primary" id="case-modal-demo" href="#" target="_blank" rel="noopener noreferrer" hidden>
-              <span>Visit Live Store</span>
-              <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
-            </a>
-            <button class="btn btn--outline" type="button" data-case-close>Close</button>
-          </div>
-        </div>
-      </div>
-    </div>
-
-    <!-- Services -->
-    <section class="section section--alt" id="services" aria-labelledby="services-heading">
-      <div class="container">
+    <!-- Skills Section (Phase 6: Organized into 7 professional categories with consistent tags & icons) -->
+    <section class="section section--alt" id="skills" aria-labelledby="skills-heading">
+      <div class="container container--wide">
         <header class="section__header">
-          <p class="section__eyebrow">Services</p>
-          <h2 id="services-heading">What I build</h2>
-          <p class="section__intro">Practical e-commerce and frontend work for stores that need to look sharp and function reliably.</p>
+          <p class="section__eyebrow">Technical Competencies</p>
+          <h2 id="skills-heading">Skills &amp; Technologies</h2>
+          <p class="section__intro">
+            A structured breakdown of my technical stack across web engineering, mobile development, databases, and e-commerce platforms.
+          </p>
         </header>
 
-        <div class="services-grid">
-          <article class="service-card">
-            <i class="fa-brands fa-shopify service-card__icon" aria-hidden="true"></i>
-            <h3>Shopify Development</h3>
-            <p>Custom storefronts, Dawn theme setup, collection configuration, and Liquid-based features tailored to your products and brand.</p>
-          </article>
-          <article class="service-card">
-            <i class="fa-brands fa-wordpress service-card__icon" aria-hidden="true"></i>
-            <h3>WooCommerce Development</h3>
-            <p>WordPress + WooCommerce store setup, product pages, and frontend work for a smoother shopping experience.</p>
-          </article>
-          <article class="service-card">
-            <i class="fa-solid fa-code service-card__icon" aria-hidden="true"></i>
-            <h3>Frontend Development</h3>
-            <p>Clean, responsive websites built with HTML, CSS, and JavaScript — fast, accessible, and easy to maintain.</p>
-          </article>
-          <article class="service-card">
-            <i class="fa-solid fa-gauge-high service-card__icon" aria-hidden="true"></i>
-            <h3>Store Optimisation</h3>
-            <p>Layout, usability, and performance improvements so your store is clearer, faster, and more mobile-friendly.</p>
-          </article>
-        </div>
-      </div>
-    </section>
+        <div class="skills-categories-grid">
+          <!-- 1. Programming & Web Technologies -->
+          <div class="skill-category-card">
+            <div class="skill-category-card__header">
+              <div class="skill-category-card__icon">
+                <i class="fa-solid fa-code" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="skill-category-card__title">Programming &amp; Web</h3>
+                <span class="skill-category-card__subtitle">Core Languages &amp; Fundamentals</span>
+              </div>
+            </div>
+            <ul class="skill-tags">
+              <li><i class="fa-brands fa-html5" aria-hidden="true"></i> HTML5 (Semantic)</li>
+              <li><i class="fa-brands fa-css3-alt" aria-hidden="true"></i> CSS3 (Modern)</li>
+              <li><i class="fa-brands fa-js" aria-hidden="true"></i> JavaScript (ES6+)</li>
+              <li><i class="fa-brands fa-java" aria-hidden="true"></i> Java (Core &amp; OOP)</li>
+              <li><i class="fa-solid fa-droplet" aria-hidden="true"></i> Liquid (Templating)</li>
+            </ul>
+          </div>
 
-    <!-- About + Skills (merged) -->
-    <section class="section" id="about" aria-labelledby="about-heading">
-      <div class="container">
-        <div class="about">
-          <header class="about__header">
-            <p class="section__eyebrow">About</p>
-            <h2 id="about-heading">Building online stores that work</h2>
-          </header>
-          <div class="about__content">
-            <p>
-              I am a BS Information Technology student and freelance e-commerce developer. I work with Shopify, WooCommerce, HTML, CSS, and JavaScript to help small businesses and online brands build stores that run smoothly across every screen.
-            </p>
-            <p>
-              I focus on what clients actually need: stores that load quickly, look professional, and are easy to navigate. I communicate clearly, ask questions early, and aim to keep every project well-organised from start to finish.
-            </p>
+          <!-- 2. Frontend Development -->
+          <div class="skill-category-card">
+            <div class="skill-category-card__header">
+              <div class="skill-category-card__icon">
+                <i class="fa-solid fa-laptop-code" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="skill-category-card__title">Frontend Development</h3>
+                <span class="skill-category-card__subtitle">Layouts, UI &amp; Accessibility</span>
+              </div>
+            </div>
+            <ul class="skill-tags">
+              <li><i class="fa-solid fa-mobile-screen-button" aria-hidden="true"></i> Responsive Web Design</li>
+              <li><i class="fa-solid fa-table-cells" aria-hidden="true"></i> CSS Grid &amp; Flexbox</li>
+              <li><i class="fa-solid fa-layer-group" aria-hidden="true"></i> DOM Manipulation</li>
+              <li><i class="fa-solid fa-cubes" aria-hidden="true"></i> Component Architecture</li>
+              <li><i class="fa-solid fa-universal-access" aria-hidden="true"></i> WCAG Accessibility</li>
+            </ul>
+          </div>
 
-            <ul class="skills-list" aria-label="Core skills and tools">
-              <li><i class="fa-brands fa-html5" aria-hidden="true"></i> HTML5</li>
-              <li><i class="fa-brands fa-css3-alt" aria-hidden="true"></i> CSS3</li>
-              <li><i class="fa-brands fa-js" aria-hidden="true"></i> JavaScript</li>
-              <li><i class="fa-brands fa-shopify" aria-hidden="true"></i> Shopify</li>
-              <li><i class="fa-solid fa-droplet" aria-hidden="true"></i> Liquid</li>
+          <!-- 3. Backend & API Integration -->
+          <div class="skill-category-card">
+            <div class="skill-category-card__header">
+              <div class="skill-category-card__icon">
+                <i class="fa-solid fa-server" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="skill-category-card__title">Backend &amp; APIs</h3>
+                <span class="skill-category-card__subtitle">Client-Server Communication</span>
+              </div>
+            </div>
+            <ul class="skill-tags">
+              <li><i class="fa-solid fa-network-wired" aria-hidden="true"></i> RESTful APIs</li>
+              <li><i class="fa-solid fa-arrows-rotate" aria-hidden="true"></i> Fetch API &amp; JSON</li>
+              <li><i class="fa-brands fa-node-js" aria-hidden="true"></i> Node.js Basics</li>
+              <li><i class="fa-solid fa-shield-halved" aria-hidden="true"></i> HTTP &amp; Web Security</li>
+            </ul>
+          </div>
+
+          <!-- 4. Database Management -->
+          <div class="skill-category-card">
+            <div class="skill-category-card__header">
+              <div class="skill-category-card__icon">
+                <i class="fa-solid fa-database" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="skill-category-card__title">Database Management</h3>
+                <span class="skill-category-card__subtitle">Data Persistence &amp; Modeling</span>
+              </div>
+            </div>
+            <ul class="skill-tags">
+              <li><i class="fa-solid fa-database" aria-hidden="true"></i> SQL Queries</li>
+              <li><i class="fa-solid fa-diagram-project" aria-hidden="true"></i> Relational Database Design</li>
+              <li><i class="fa-solid fa-table" aria-hidden="true"></i> Schema Normalization</li>
+              <li><i class="fa-solid fa-key" aria-hidden="true"></i> Primary &amp; Foreign Keys</li>
+            </ul>
+          </div>
+
+          <!-- 5. Android Development -->
+          <div class="skill-category-card">
+            <div class="skill-category-card__header">
+              <div class="skill-category-card__icon">
+                <i class="fa-brands fa-android" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="skill-category-card__title">Android Development</h3>
+                <span class="skill-category-card__subtitle">Native Mobile Engineering</span>
+              </div>
+            </div>
+            <ul class="skill-tags">
+              <li><i class="fa-brands fa-android" aria-hidden="true"></i> Android SDK</li>
+              <li><i class="fa-solid fa-gears" aria-hidden="true"></i> Android Studio</li>
+              <li><i class="fa-solid fa-code" aria-hidden="true"></i> XML UI Layouts</li>
+              <li><i class="fa-solid fa-rotate" aria-hidden="true"></i> Activity Lifecycle</li>
+              <li><i class="fa-solid fa-list-check" aria-hidden="true"></i> RecyclerView &amp; Adapters</li>
+            </ul>
+          </div>
+
+          <!-- 6. E-commerce Development -->
+          <div class="skill-category-card">
+            <div class="skill-category-card__header">
+              <div class="skill-category-card__icon">
+                <i class="fa-solid fa-cart-shopping" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="skill-category-card__title">E-commerce Solutions</h3>
+                <span class="skill-category-card__subtitle">Storefronts &amp; Fulfillment</span>
+              </div>
+            </div>
+            <ul class="skill-tags">
+              <li><i class="fa-brands fa-shopify" aria-hidden="true"></i> Shopify Store Development</li>
+              <li><i class="fa-solid fa-paintbrush" aria-hidden="true"></i> Dawn Theme Customization</li>
+              <li><i class="fa-solid fa-droplet" aria-hidden="true"></i> Shopify Liquid Sections</li>
               <li><i class="fa-brands fa-wordpress" aria-hidden="true"></i> WooCommerce</li>
-              <li><i class="fa-brands fa-git-alt" aria-hidden="true"></i> Git / GitHub</li>
-              <li><i class="fa-solid fa-mobile-screen" aria-hidden="true"></i> Responsive Design</li>
-              <li><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Basic SEO</li>
+              <li><i class="fa-solid fa-gauge-high" aria-hidden="true"></i> Store Speed Optimization</li>
+            </ul>
+          </div>
+
+          <!-- 7. Development Tools & Workflow -->
+          <div class="skill-category-card skill-category-card--wide">
+            <div class="skill-category-card__header">
+              <div class="skill-category-card__icon">
+                <i class="fa-solid fa-screwdriver-wrench" aria-hidden="true"></i>
+              </div>
+              <div>
+                <h3 class="skill-category-card__title">Development Tools &amp; Workflow</h3>
+                <span class="skill-category-card__subtitle">Productivity &amp; Version Control</span>
+              </div>
+            </div>
+            <ul class="skill-tags">
+              <li><i class="fa-brands fa-git-alt" aria-hidden="true"></i> Git</li>
+              <li><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</li>
+              <li><i class="fa-solid fa-terminal" aria-hidden="true"></i> VS Code</li>
+              <li><i class="fa-brands fa-chrome" aria-hidden="true"></i> Chrome DevTools</li>
+              <li><i class="fa-brands fa-npm" aria-hidden="true"></i> npm</li>
+              <li><i class="fa-solid fa-magnifying-glass" aria-hidden="true"></i> Basic On-Page SEO</li>
             </ul>
           </div>
         </div>
       </div>
     </section>
 
-    <!-- Contact -->
-    <section class="section section--alt" id="contact" aria-labelledby="contact-heading">
-      <div class="container contact">
+    <!-- About & Education Section (Phase 5: Professional intro, university details, recruiter-friendly) -->
+    <section class="section" id="about" aria-labelledby="about-heading">
+      <div class="container container--wide">
+        <div class="about-education-layout">
+          <!-- Left: About Me -->
+          <div class="about-block">
+            <header class="section__header">
+              <p class="section__eyebrow">About Me</p>
+              <h2 id="about-heading">Engineering digital products that work smoothly</h2>
+            </header>
+
+            <div class="about-text">
+              <p>
+                I am a passionate <strong>Software Developer</strong> and undergraduate student pursuing a <strong>Bachelor of Science in Information Technology (BSIT)</strong> at the <strong>University of Sargodha</strong>.
+              </p>
+              <p>
+                My development experience centers on creating clean, responsive web applications, developing native Android solutions, and configuring customized e-commerce storefronts on Shopify. I approach every project with an engineering mindset: understanding client objectives early, writing well-structured and maintainable code, and ensuring the final user experience is fast, accessible, and dependable across all devices.
+              </p>
+              <p>
+                I enjoy tackling layout challenges with modern CSS Grid and Flexbox, crafting interactive frontends with vanilla JavaScript, and building practical client solutions like the customized Dawn storefront for MBAcraftmart.
+              </p>
+
+              <div class="about-highlights">
+                <div class="highlight-item">
+                  <i class="fa-solid fa-circle-check highlight-item__icon" aria-hidden="true"></i>
+                  <div>
+                    <strong>Clean Code &amp; Accessibility:</strong> Semantic HTML5 markup, WCAG contrast compliance, and responsive layouts.
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <i class="fa-solid fa-circle-check highlight-item__icon" aria-hidden="true"></i>
+                  <div>
+                    <strong>Pragmatic Solutions:</strong> Solving genuine client and business needs without unnecessary dependencies.
+                  </div>
+                </div>
+                <div class="highlight-item">
+                  <i class="fa-solid fa-circle-check highlight-item__icon" aria-hidden="true"></i>
+                  <div>
+                    <strong>Career Interests:</strong> Seeking software engineering internships, junior developer positions, and freelance opportunities.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Dedicated Education Section (Phase 5) -->
+          <div class="education-block" id="education" aria-labelledby="education-heading">
+            <header class="section__header">
+              <p class="section__eyebrow">Academic Background</p>
+              <h2 id="education-heading">Education</h2>
+            </header>
+
+            <div class="education-card">
+              <div class="education-card__header">
+                <div class="education-card__icon">
+                  <i class="fa-solid fa-building-columns" aria-hidden="true"></i>
+                </div>
+                <div class="education-card__meta">
+                  <span class="education-card__badge">University Degree</span>
+                  <h3 class="education-card__degree">BS Information Technology (BSIT)</h3>
+                  <p class="education-card__institution">University of Sargodha</p>
+                  <p class="education-card__location"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Sargodha, Punjab, Pakistan</p>
+                </div>
+              </div>
+
+              <div class="education-card__body">
+                <h4 class="education-card__section-title">Core Academic Coursework &amp; Technical Focus:</h4>
+                <ul class="education-card__list">
+                  <li><i class="fa-solid fa-check" aria-hidden="true"></i> <strong>Software Engineering:</strong> SDLC models, requirements gathering, architectural design.</li>
+                  <li><i class="fa-solid fa-check" aria-hidden="true"></i> <strong>Web Technologies:</strong> Client-server models, responsive design, JavaScript programming.</li>
+                  <li><i class="fa-solid fa-check" aria-hidden="true"></i> <strong>Database Systems:</strong> Relational schema design, SQL querying, normalization.</li>
+                  <li><i class="fa-solid fa-check" aria-hidden="true"></i> <strong>Object-Oriented Programming (OOP):</strong> Java programming, inheritance, polymorphism, encapsulation.</li>
+                  <li><i class="fa-solid fa-check" aria-hidden="true"></i> <strong>Data Structures &amp; Algorithms:</strong> Arrays, linked lists, stacks, queues, trees, search &amp; sort.</li>
+                  <li><i class="fa-solid fa-check" aria-hidden="true"></i> <strong>Mobile Application Development:</strong> Android SDK, UI lifecycle, storage &amp; activities.</li>
+                </ul>
+              </div>
+
+              <div class="education-card__footer">
+                <a class="btn btn--secondary btn--sm" href="assets/docs/resume.html" target="_blank" rel="noopener noreferrer">
+                  <i class="fa-solid fa-file-lines" aria-hidden="true"></i>
+                  <span>View Complete Academic Resume</span>
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Services Section (Aligned with Software Developer positioning) -->
+    <section class="section section--alt" id="services" aria-labelledby="services-heading">
+      <div class="container container--wide">
         <header class="section__header">
-          <p class="section__eyebrow">Contact</p>
-          <h2 id="contact-heading">Let's work together</h2>
-          <p class="section__intro">Have a store idea or an existing site that needs work? Reach out by email or WhatsApp and I will reply within a day.</p>
+          <p class="section__eyebrow">Professional Services</p>
+          <h2 id="services-heading">What I Build &amp; Deliver</h2>
+          <p class="section__intro">
+            Practical development services for teams and businesses seeking clean code, robust software solutions, and dependable results.
+          </p>
+        </header>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <i class="fa-solid fa-code service-card__icon" aria-hidden="true"></i>
+            <h3 class="service-card__title">Modern Web Development</h3>
+            <p class="service-card__desc">
+              Custom, responsive web applications built with semantic HTML5, modern CSS3, and JavaScript — fast-loading, accessible, and maintainable.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <i class="fa-brands fa-android service-card__icon" aria-hidden="true"></i>
+            <h3 class="service-card__title">Android App Development</h3>
+            <p class="service-card__desc">
+              Native Android application development using Java and Android Studio, following solid OOP principles, clean XML layouts, and responsive design.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <i class="fa-brands fa-shopify service-card__icon" aria-hidden="true"></i>
+            <h3 class="service-card__title">Shopify Store Development</h3>
+            <p class="service-card__desc">
+              Custom Dawn theme setup, Liquid section development, product catalog architecture, and localized checkout configurations.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <i class="fa-solid fa-gauge-high service-card__icon" aria-hidden="true"></i>
+            <h3 class="service-card__title">UI/UX &amp; Store Optimization</h3>
+            <p class="service-card__desc">
+              Responsive testing across mobile viewports, performance auditing, accessibility tuning, and cross-browser bug resolution.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Contact Section (Phase 8: Verified links, clear CTAs, copy button) -->
+    <section class="section" id="contact" aria-labelledby="contact-heading">
+      <div class="container container--wide contact">
+        <header class="section__header">
+          <p class="section__eyebrow">Get in Touch</p>
+          <h2 id="contact-heading">Let's discuss an opportunity or project</h2>
+          <p class="section__intro">
+            Whether you are looking for a dedicated software developer for an internship, a junior engineering role, or a freelance web/e-commerce project, I would be glad to connect.
+          </p>
         </header>
 
         <div class="contact__grid">
           <div class="contact__details">
-            <h3 class="visually-hidden">Contact links</h3>
-            <ul class="contact-links">
+            <ul class="contact-links" aria-label="Direct contact channels">
               <li>
                 <span class="contact-links__label"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email</span>
-                <a href="mailto:zulqarnainawan441@gmail.com">zulqarnainawan441@gmail.com</a>
-                <span class="contact-links__hint">Opens your email app</span>
+                <div class="contact-links__row">
+                  <a href="mailto:zulqarnainawan441@gmail.com" class="contact-links__val">zulqarnainawan441@gmail.com</a>
+                  <button type="button" class="btn-copy" data-copy="zulqarnainawan441@gmail.com" aria-label="Copy email address to clipboard">
+                    <i class="fa-regular fa-copy" aria-hidden="true"></i>
+                    <span class="btn-copy__tip">Copy</span>
+                  </button>
+                </div>
+                <span class="contact-links__hint">Direct email inbox · Usually replies within 24 hours</span>
               </li>
+
               <li>
                 <span class="contact-links__label"><i class="fa-brands fa-whatsapp" aria-hidden="true"></i> WhatsApp</span>
-                <a href="https://wa.me/923421583136" target="_blank" rel="noopener noreferrer">03421583136</a>
-                <span class="contact-links__hint">Opens WhatsApp</span>
+                <div class="contact-links__row">
+                  <a href="https://wa.me/923421583136" target="_blank" rel="noopener noreferrer" class="contact-links__val">+92 342 1583136</a>
+                </div>
+                <span class="contact-links__hint">Instant messaging for quick project discussions</span>
               </li>
+
               <li>
                 <span class="contact-links__label"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</span>
-                <a href="https://www.linkedin.com/in/zulqarnain-awan-50b24b38a/" target="_blank" rel="noopener noreferrer">Zulqarnain Awan</a>
-                <span class="contact-links__hint">Opens in a new tab</span>
+                <div class="contact-links__row">
+                  <a href="https://www.linkedin.com/in/zulqarnain-awan-50b24b38a/" target="_blank" rel="noopener noreferrer" class="contact-links__val">linkedin.com/in/zulqarnain-awan</a>
+                </div>
+                <span class="contact-links__hint">Professional profile and career network</span>
               </li>
+
               <li>
                 <span class="contact-links__label"><i class="fa-brands fa-github" aria-hidden="true"></i> GitHub</span>
-                <a href="https://github.com/zulqarnainawan441" target="_blank" rel="noopener noreferrer">zulqarnainawan441</a>
-                <span class="contact-links__hint">Opens in a new tab</span>
+                <div class="contact-links__row">
+                  <a href="https://github.com/zulqarnainawan441" target="_blank" rel="noopener noreferrer" class="contact-links__val">github.com/zulqarnainawan441</a>
+                </div>
+                <span class="contact-links__hint">Code repositories, projects, and active contributions</span>
               </li>
             </ul>
           </div>
 
           <div class="contact__cta-panel">
+            <div class="contact__cta-badge">
+              <i class="fa-solid fa-handshake" aria-hidden="true"></i>
+              <span>Ready to Collaborate</span>
+            </div>
+            <h3 class="contact__cta-title">Start a Conversation</h3>
             <p class="contact__cta-note">
-              The quickest way to start a conversation is by email or WhatsApp.
-              Describe your project briefly and I will get back to you.
+              The quickest way to reach me is by direct email or WhatsApp. Feel free to share project specifications, questions, or opportunity details.
             </p>
             <div class="contact__cta-actions">
               <a class="btn btn--primary" href="mailto:zulqarnainawan441@gmail.com">
                 <i class="fa-solid fa-envelope" aria-hidden="true"></i>
-                Send an Email
+                <span>Send an Email</span>
               </a>
               <a class="btn btn--whatsapp" href="https://wa.me/923421583136" target="_blank" rel="noopener noreferrer">
                 <i class="fa-brands fa-whatsapp" aria-hidden="true"></i>
-                Message on WhatsApp
+                <span>Message on WhatsApp</span>
+              </a>
+              <a class="btn btn--secondary" href="assets/docs/resume.html" target="_blank" rel="noopener noreferrer">
+                <i class="fa-solid fa-file-arrow-down" aria-hidden="true"></i>
+                <span>Download CV / Resume</span>
               </a>
             </div>
           </div>
@@ -469,17 +780,89 @@
     </section>
   </main>
 
+  <!-- Interactive Case Study Modal (Enhanced with complete keyboard trapping & ARIA) -->
+  <div
+    class="case-modal"
+    id="case-modal"
+    hidden
+    role="dialog"
+    aria-modal="true"
+    aria-labelledby="case-modal-title"
+  >
+    <div class="case-modal__backdrop" data-case-close tabindex="-1"></div>
+    <div class="case-modal__panel" role="document">
+      <div class="case-modal__header-bar">
+        <span class="case-modal__badge" id="case-modal-badge">Project Case Study</span>
+        <button class="case-modal__close" type="button" data-case-close aria-label="Close case study dialog">
+          <i class="fa-solid fa-xmark" aria-hidden="true"></i>
+        </button>
+      </div>
+
+      <div class="case-modal__media">
+        <img id="case-modal-image" src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 10'%3E%3C/svg%3E" alt="Case study project preview" width="960" height="540" decoding="async">
+      </div>
+
+      <div class="case-modal__content">
+        <p class="case-modal__category" id="case-modal-category"></p>
+        <h2 id="case-modal-title"></h2>
+        <p class="case-modal__disclaimer" id="case-modal-disclaimer"></p>
+
+        <div class="case-modal__grid">
+          <section>
+            <h3>Overview</h3>
+            <p id="case-modal-overview"></p>
+          </section>
+          <section>
+            <h3>Objective</h3>
+            <p id="case-modal-objective"></p>
+          </section>
+          <section>
+            <h3>Key Features</h3>
+            <ul id="case-modal-features"></ul>
+          </section>
+          <section>
+            <h3>Technologies Used</h3>
+            <ul class="tech-list" id="case-modal-tech"></ul>
+          </section>
+          <section class="case-modal__responsive">
+            <h3>Responsive Design &amp; Architecture</h3>
+            <p id="case-modal-responsive"></p>
+          </section>
+        </div>
+
+        <div class="case-modal__actions">
+          <a class="btn btn--primary" id="case-modal-demo" href="#" target="_blank" rel="noopener noreferrer" hidden>
+            <span>Visit Live Project</span>
+            <i class="fa-solid fa-arrow-up-right-from-square" aria-hidden="true"></i>
+          </a>
+          <a class="btn btn--secondary" id="case-modal-github" href="#" target="_blank" rel="noopener noreferrer" hidden>
+            <i class="fa-brands fa-github" aria-hidden="true"></i>
+            <span>View Source on GitHub</span>
+          </a>
+          <button class="btn btn--outline" type="button" data-case-close>Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification for Copy Actions -->
+  <div class="toast" id="toast" role="status" aria-live="polite" aria-atomic="true"></div>
+
+  <!-- Site Footer -->
   <footer class="site-footer">
     <div class="container site-footer__inner">
       <div class="site-footer__meta">
         <p class="site-footer__brand">Zulqarnain Awan</p>
-        <p class="site-footer__role">E-commerce Web Developer</p>
+        <p class="site-footer__role">Software Developer · Web, Android &amp; E-commerce</p>
+        <p class="site-footer__edu">BS Information Technology · University of Sargodha</p>
       </div>
-      <p class="site-footer__copy">&copy; <span id="year"></span> Zulqarnain Awan. All rights reserved.</p>
+
+      <p class="site-footer__copy">&copy; <span id="year">2026</span> Zulqarnain Awan. All rights reserved.</p>
+
       <div class="site-footer__right">
-        <ul class="site-footer__social" aria-label="Social links">
+        <ul class="site-footer__social" aria-label="Social media links">
           <li>
-            <a href="mailto:zulqarnainawan441@gmail.com" aria-label="Email Zulqarnain Awan">
+            <a href="mailto:zulqarnainawan441@gmail.com" aria-label="Send email to Zulqarnain Awan">
               <i class="fa-solid fa-envelope" aria-hidden="true"></i>
             </a>
           </li>
@@ -499,11 +882,12 @@
             </a>
           </li>
         </ul>
-        <a class="site-footer__top" href="#top">Back to top &uarr;</a>
+        <a class="site-footer__top" href="#top" aria-label="Back to top of page">Back to top &uarr;</a>
       </div>
     </div>
   </footer>
 
+  <!-- Interactivity Script -->
   <script src="js/script.js" defer></script>
 </body>
 </html>
