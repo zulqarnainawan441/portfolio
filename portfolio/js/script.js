@@ -39,21 +39,40 @@
   window.addEventListener("scroll", updateHeaderState, { passive: true });
 
   /* Mobile navigation */
+  const backdrop = document.querySelector("[data-menu-backdrop]");
+
   const setMenuOpen = (open) => {
     if (!toggle || !menu) return;
     menu.classList.toggle("is-open", open);
     toggle.setAttribute("aria-expanded", open ? "true" : "false");
     toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
+    document.body.classList.toggle("mobile-menu-open", open);
+    if (backdrop) backdrop.hidden = !open;
   };
 
   if (toggle && menu) {
-    toggle.addEventListener("click", () => {
+    toggle.addEventListener("click", (event) => {
+      event.stopPropagation();
       const isOpen = toggle.getAttribute("aria-expanded") === "true";
       setMenuOpen(!isOpen);
     });
 
     menu.querySelectorAll("a").forEach((link) => {
       link.addEventListener("click", () => setMenuOpen(false));
+    });
+
+    if (backdrop) {
+      backdrop.addEventListener("click", () => setMenuOpen(false));
+    }
+
+    document.addEventListener("click", (event) => {
+      if (
+        menu.classList.contains("is-open") &&
+        !menu.contains(event.target) &&
+        !toggle.contains(event.target)
+      ) {
+        setMenuOpen(false);
+      }
     });
 
     window.addEventListener(
