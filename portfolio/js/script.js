@@ -69,7 +69,7 @@
 
   /* Scroll reveal — sections & key blocks only */
   const revealTargets = document.querySelectorAll(
-    ".section__header, .service-card, .project-card, .other-project-card, .skills-list, .about__content, .why-list, .contact__details, .contact-form, .hero__content, .hero__visual"
+    ".section__header, .service-card, .project-card, .other-project-card, .skills-list, .about__content, .why-list, .contact__details, .contact-form, .contact__cta-panel, .hero__content, .hero__visual"
   );
 
   revealTargets.forEach((el, index) => {
@@ -103,14 +103,39 @@
     revealTargets.forEach((el) => el.classList.add("is-visible"));
   }
 
-  /* Case study modal data (demo / concept projects only) */
+  /* Case study modal data (client project + concept builds) */
   const caseStudies = {
+    mbacraftmart: {
+      title: "MBAcraftmart Shopify Store",
+      category: "Shopify Store · Client Project",
+      badge: "Client Project",
+      image: "assets/images/project-mbacraftmart.png",
+      imageAlt: "MBAcraftmart Shopify store preview — bouquets, arts and crafts, and gift hampers",
+      demoUrl: "https://mbacraftmart.myshopify.com/",
+      disclaimer:
+        "Client project built as a Shopify developer and service provider for a friend. Configured the storefront using Shopify and the Dawn theme for a retail and gifting brand in Pakistan.",
+      overview:
+        "MBAcraftmart is an e-commerce storefront dedicated to handcrafted floral bouquets, custom arts and crafts, and curated gift hampers. The store was established on Shopify utilizing the Dawn theme to deliver a clean, trustworthy product showcase tailored for local fulfillment across Pakistan.",
+      objective:
+        "Build a polished and accessible Shopify storefront highlighting product craftsmanship and gift collections, with an emphasis on seamless mobile browsing and clear category navigation for customers throughout Pakistan.",
+      features: [
+        "Shopify Dawn theme setup and storefront customization",
+        "Catalog categorization for bouquets, crafts, and gift hampers",
+        "Mobile-first product grid and clear variant browsing",
+        "Configured for Pakistan target market and local fulfillment",
+        "Streamlined navigation structure for gifting occasions"
+      ],
+      technologies: ["Shopify", "Dawn Theme", "Liquid", "CSS3", "Mobile-First Design"],
+      responsive:
+        "Structured and tested specifically for mobile devices, which represent the dominant channel for online shopping in Pakistan, ensuring fluid browsing, fast visual loading, and intuitive purchase actions across screens."
+    },
     urbanwear: {
       title: "UrbanWear",
       category: "Fashion E-commerce",
+      badge: "Concept Project",
       image: "assets/images/project-fashion.jpg",
       imageAlt: "UrbanWear fashion e-commerce demo store preview",
-      demoUrl: "#",
+      demoUrl: "https://zulqarnainawan441.github.io/Urban-wear/UrbanWear/",
       disclaimer:
         "This is a demo / concept project created to showcase e-commerce frontend skills. It is not presented as a real client engagement.",
       overview:
@@ -131,9 +156,10 @@
     glowskin: {
       title: "GlowSkin",
       category: "Cosmetics E-commerce",
+      badge: "Concept Project",
       image: "assets/images/project-cosmetics.jpg",
       imageAlt: "GlowSkin cosmetics e-commerce demo store preview",
-      demoUrl: "#",
+      demoUrl: "",
       disclaimer:
         "This is a demo / concept project created to showcase e-commerce frontend skills. It is not presented as a real client engagement.",
       overview:
@@ -154,9 +180,10 @@
     techzone: {
       title: "TechZone",
       category: "Electronics E-commerce",
+      badge: "Concept Project",
       image: "assets/images/project-electronics.jpg",
       imageAlt: "TechZone electronics e-commerce demo store preview",
-      demoUrl: "#",
+      demoUrl: "",
       disclaimer:
         "This is a demo / concept project created to showcase e-commerce frontend skills. It is not presented as a real client engagement.",
       overview:
@@ -177,9 +204,10 @@
     "shopify-store": {
       title: "Shopify Store",
       category: "Shopify E-commerce",
+      badge: "Concept Project",
       image: "assets/images/project-shopify.jpg",
       imageAlt: "Shopify e-commerce demo project preview",
-      demoUrl: "#",
+      demoUrl: "",
       disclaimer:
         "This is a demo / concept project created to showcase Shopify and Liquid skills. It is not presented as a real client engagement.",
       overview:
@@ -200,6 +228,7 @@
   };
 
   const modal = document.querySelector("#case-modal");
+  const modalBadge = document.querySelector("#case-modal-badge");
   const modalImage = document.querySelector("#case-modal-image");
   const modalCategory = document.querySelector("#case-modal-category");
   const modalTitle = document.querySelector("#case-modal-title");
@@ -228,6 +257,11 @@
 
     lastFocus = document.activeElement;
 
+    if (modalBadge) {
+      modalBadge.textContent = study.badge || "Concept Project";
+      modalBadge.classList.toggle("case-modal__badge--client", study.badge === "Client Project");
+    }
+
     modalCategory.textContent = study.category;
     modalTitle.textContent = study.title;
     modalDisclaimer.textContent = study.disclaimer;
@@ -242,13 +276,15 @@
     modalImage.classList.remove("is-placeholder");
     modalImage.onerror = () => modalImage.classList.add("is-placeholder");
 
-    modalDemo.href = study.demoUrl || "#";
-    if (!study.demoUrl || study.demoUrl === "#") {
-      modalDemo.setAttribute("aria-disabled", "true");
-      modalDemo.title = "Add your live demo URL";
-    } else {
-      modalDemo.removeAttribute("aria-disabled");
-      modalDemo.removeAttribute("title");
+    if (modalDemo) {
+      if (study.demoUrl && study.demoUrl !== "#") {
+        modalDemo.href = study.demoUrl;
+        modalDemo.hidden = false;
+        modalDemo.removeAttribute("aria-disabled");
+      } else {
+        modalDemo.hidden = true;
+        modalDemo.removeAttribute("href");
+      }
     }
 
     modal.hidden = false;
@@ -298,7 +334,7 @@
     }
   });
 
-  /* Contact form — client-side validation only (no backend) */
+  /* Contact form — client-side validation only (if present) */
   if (form) {
     const nameInput = form.querySelector("#name");
     const emailInput = form.querySelector("#email");
